@@ -34,7 +34,7 @@ public class OpNode implements Node {
     @Override
     public String display() {
         switch (this.operator.getSymbol()) {
-            case "+" : return leftOperand.display() + " + " + rightOperand.display();
+            case "+" : return this.operator.display(leftOperand, rightOperand);
             case "-" : return leftOperand.display() + " - " + rightOperand.display();
             case "*" : return leftOperand.display() + " * " + rightOperand.display();
             default  : throw new UnsupportedOperationException();

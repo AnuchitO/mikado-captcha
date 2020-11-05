@@ -22,4 +22,8 @@ public class Operator {
     public String getSymbol() {
         return symbol;
     }
+
+    public String display(Node leftOperand, Node rightOperand) {
+        return leftOperand.display() + " " + this.symbol + " " + rightOperand.display();
+    }
 }
