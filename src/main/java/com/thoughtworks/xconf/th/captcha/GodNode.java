@@ -19,7 +19,7 @@ public class GodNode extends ValueNode implements Node {
     }
 
     public static Node valueNode(Integer value) {
-        return new GodNode(value);
+        return new ValueNode(value);
     }
 
     public static Node opNode(String operator, Node leftOperand, Node rightOperand) {
@@ -32,7 +32,6 @@ public class GodNode extends ValueNode implements Node {
             case "+" : return leftOperand.compute() + rightOperand.compute();
             case "-" : return leftOperand.compute() - rightOperand.compute();
             case "*" : return leftOperand.compute() * rightOperand.compute();
-            case "#" : return this.value;
             default  : throw new UnsupportedOperationException();
         }
     }
@@ -43,7 +42,6 @@ public class GodNode extends ValueNode implements Node {
             case "+" : return leftOperand.display() + " + " + rightOperand.display();
             case "-" : return leftOperand.display() + " - " + rightOperand.display();
             case "*" : return leftOperand.display() + " * " + rightOperand.display();
-            case "#" : return this.value + "";
             default  : throw new UnsupportedOperationException();
         }
     }
