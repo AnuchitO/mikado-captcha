@@ -17,8 +17,8 @@ public class OpNode implements Node {
         return new ValueNode(value);
     }
 
-    public static Node opNode(String operator, Node leftOperand, Node rightOperand) {
-        return new OpNode(operator, leftOperand, rightOperand);
+    public static Node opNode(Operator operator1, Node leftOperand, Node rightOperand) {
+        return new OpNode(operator1.getOperator(), leftOperand, rightOperand);
     }
 
     @Override
