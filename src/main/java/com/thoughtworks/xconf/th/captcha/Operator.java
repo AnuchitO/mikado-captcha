@@ -29,17 +29,6 @@ public abstract class Operator {
 
     public abstract Integer compute(Node left, Node right);
 
-    private static class Multiply extends Operator {
-        public Multiply() {
-            super("*");
-        }
-
-        @Override
-        public Integer compute(Node left, Node right) {
-            return left.compute() * right.compute();
-        }
-    }
-
     private static class Plus extends Operator {
         public Plus() {
             super("+");
