@@ -1,13 +1,13 @@
 package com.thoughtworks.xconf.th.captcha;
 
 public class Operator {
-    private final String operator;
+    private final String symbol;
 
-    public Operator(String operator) {
-        this.operator = operator;
+    public Operator(String symbol) {
+        this.symbol = symbol;
     }
 
-    public String getOperator() {
-        return operator;
+    public String getSymbol() {
+        return symbol;
     }
 }

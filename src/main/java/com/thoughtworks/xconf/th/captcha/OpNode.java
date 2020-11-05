@@ -23,7 +23,7 @@ public class OpNode implements Node {
 
     @Override
     public Integer compute() {
-        switch (this.operator.getOperator()) {
+        switch (this.operator.getSymbol()) {
             case "+" : return leftOperand.compute() + rightOperand.compute();
             case "-" : return leftOperand.compute() - rightOperand.compute();
             case "*" : return leftOperand.compute() * rightOperand.compute();
@@ -33,7 +33,7 @@ public class OpNode implements Node {
 
     @Override
     public String display() {
-        switch (this.operator.getOperator()) {
+        switch (this.operator.getSymbol()) {
             case "+" : return leftOperand.display() + " + " + rightOperand.display();
             case "-" : return leftOperand.display() + " - " + rightOperand.display();
             case "*" : return leftOperand.display() + " * " + rightOperand.display();
