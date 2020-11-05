@@ -23,12 +23,7 @@ public class OpNode implements Node {
 
     @Override
     public Integer compute() {
-        switch (this.operator.getSymbol()) {
-            case "+" : return leftOperand.compute() + rightOperand.compute();
-            case "-" : return leftOperand.compute() - rightOperand.compute();
-            case "*" : return leftOperand.compute() * rightOperand.compute();
-            default  : throw new UnsupportedOperationException();
-        }
+        return this.operator.compute(leftOperand, rightOperand);
     }
 
     @Override
