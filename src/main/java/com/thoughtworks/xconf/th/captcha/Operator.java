@@ -8,30 +8,15 @@ public abstract class Operator {
     }
 
     static Operator multiply() {
-        return new Operator("*") {
-            @Override
-            public Integer compute(Node left, Node right) {
-                return left.compute() * right.compute();
-            }
-        };
+        return new Multiply();
     }
 
     static Operator plus() {
-        return new Operator("+") {
-            @Override
-            public Integer compute(Node left, Node right) {
-                return left.compute() + right.compute();
-            }
-        };
+        return new Plus();
     }
 
     static Operator minus() {
-        return new Operator("-") {
-            @Override
-            public Integer compute(Node left, Node right) {
-                return left.compute() - right.compute();
-            }
-        };
+        return new Minus();
     }
 
     public String getSymbol() {
@@ -43,4 +28,37 @@ public abstract class Operator {
     }
 
     public abstract Integer compute(Node left, Node right);
+
+    private static class Multiply extends Operator {
+        public Multiply() {
+            super("*");
+        }
+
+        @Override
+        public Integer compute(Node left, Node right) {
+            return left.compute() * right.compute();
+        }
+    }
+
+    private static class Plus extends Operator {
+        public Plus() {
+            super("+");
+        }
+
+        @Override
+        public Integer compute(Node left, Node right) {
+            return left.compute() + right.compute();
+        }
+    }
+
+    private static class Minus extends Operator {
+        public Minus() {
+            super("-");
+        }
+
+        @Override
+        public Integer compute(Node left, Node right) {
+            return left.compute() - right.compute();
+        }
+    }
 }
