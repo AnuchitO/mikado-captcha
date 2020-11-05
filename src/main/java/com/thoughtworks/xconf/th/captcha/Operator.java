@@ -1,6 +1,6 @@
 package com.thoughtworks.xconf.th.captcha;
 
-public class Operator {
+public abstract class Operator {
     private final String symbol;
 
     public Operator(String symbol) {
@@ -26,4 +26,6 @@ public class Operator {
     public String display(Node leftOperand, Node rightOperand) {
         return leftOperand.display() + " " + this.symbol + " " + rightOperand.display();
     }
+
+    public abstract Integer compute(Node left, Node right);
 }
