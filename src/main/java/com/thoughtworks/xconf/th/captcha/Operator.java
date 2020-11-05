@@ -7,6 +7,18 @@ public class Operator {
         this.symbol = symbol;
     }
 
+    static Operator multiply() {
+        return new Operator("*");
+    }
+
+    static Operator plus() {
+        return new Operator("+");
+    }
+
+    static Operator minus() {
+        return new Operator("-");
+    }
+
     public String getSymbol() {
         return symbol;
     }
