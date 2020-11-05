@@ -31,6 +31,10 @@ public class NodeTest {
         return new Operator("+");
     }
 
+    private static Operator minus() {
+        return new Operator("-");
+    }
+
     @Test
     public void compute_ValueNode_givesTheValueBack() {
         Node valueNode = OpNode.valueNode(2);
@@ -39,7 +43,7 @@ public class NodeTest {
 
     @Test
     public void compute_OperatorNode_givesTheComputedResult() {
-        Node opsNode = OpNode.opNode(new Operator("-"), OpNode.valueNode(5), OpNode.valueNode(3));
+        Node opsNode = OpNode.opNode(minus(), OpNode.valueNode(5), OpNode.valueNode(3));
         assertEquals(2, opsNode.compute().intValue());
     }
 
