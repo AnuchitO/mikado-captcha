@@ -1,9 +1,8 @@
 package com.thoughtworks.xconf.th.captcha;
 
-public class GodNode implements Node {
+public class GodNode extends ValueNode implements Node {
 
     private String operator = "#";
-    private Integer value = 0;
 
     private Node leftOperand;
     private Node rightOperand;
