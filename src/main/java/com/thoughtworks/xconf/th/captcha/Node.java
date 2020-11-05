@@ -14,8 +14,12 @@ public class Node {
         this.rightOperand = rightOperand;
     }
 
-    public Node(Integer value) {
+    private Node(Integer value) {
         this.value = value;
+    }
+
+    public static Node valueNode(Integer value) {
+        return new Node(value);
     }
 
     public Integer compute() {
