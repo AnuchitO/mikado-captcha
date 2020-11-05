@@ -8,15 +8,30 @@ public abstract class Operator {
     }
 
     static Operator multiply() {
-        return new Operator("*");
+        return new Operator("*") {
+            @Override
+            public Integer compute(Node left, Node right) {
+                return left.compute() * right.compute();
+            }
+        };
     }
 
     static Operator plus() {
-        return new Operator("+");
+        return new Operator("+") {
+            @Override
+            public Integer compute(Node left, Node right) {
+                return left.compute() + right.compute();
+            }
+        };
     }
 
     static Operator minus() {
-        return new Operator("-");
+        return new Operator("-") {
+            @Override
+            public Integer compute(Node left, Node right) {
+                return left.compute() - right.compute();
+            }
+        };
     }
 
     public String getSymbol() {
