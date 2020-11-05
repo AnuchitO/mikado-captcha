@@ -2,7 +2,7 @@ package com.thoughtworks.xconf.th.captcha;
 
 public class OpNode implements Node {
 
-    private String operator = "#";
+    private String operator;
 
     private Node leftOperand;
     private Node rightOperand;
