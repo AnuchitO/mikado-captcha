@@ -15,14 +15,14 @@ public class NodeTest {
 
     @Test
     public void display_OperatorNode_printsTheEquation() {
-        Node operatorNode = new Node("+", Node.valueNode(1), Node.valueNode(2));
+        Node operatorNode = Node.opNode("+", Node.valueNode(1), Node.valueNode(2));
         assertEquals("1 + 2", operatorNode.display());
     }
 
     @Test
     public void display_complexOperatorNodes() {
-        Node f = new Node("*", Node.valueNode(2), Node.valueNode(5));
-        Node g = new Node("+", f, Node.valueNode(3));
+        Node f = Node.opNode("*", Node.valueNode(2), Node.valueNode(5));
+        Node g = Node.opNode("+", f, Node.valueNode(3));
 
         assertEquals("2 * 5 + 3", g.display());
     }
@@ -35,14 +35,14 @@ public class NodeTest {
 
     @Test
     public void compute_OperatorNode_givesTheComputedResult() {
-        Node opsNode = new Node("-", Node.valueNode(5), Node.valueNode(3));
+        Node opsNode = Node.opNode("-", Node.valueNode(5), Node.valueNode(3));
         assertEquals(2, opsNode.compute().intValue());
     }
 
     @Test
     public void compute_complexOperatorNodes() {
-        Node f = new Node("*", Node.valueNode(2), Node.valueNode(5));
-        Node g = new Node("+", f, Node.valueNode(3));
+        Node f = Node.opNode("*", Node.valueNode(2), Node.valueNode(5));
+        Node g = Node.opNode("+", f, Node.valueNode(3));
 
         assertEquals(13, g.compute().intValue());
     }

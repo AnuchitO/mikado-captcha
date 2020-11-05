@@ -8,7 +8,7 @@ public class Node {
     private Node leftOperand;
     private Node rightOperand;
 
-    public Node(String operator, Node leftOperand, Node rightOperand) {
+    private Node(String operator, Node leftOperand, Node rightOperand) {
         this.operator = operator;
         this.leftOperand = leftOperand;
         this.rightOperand = rightOperand;
@@ -20,6 +20,10 @@ public class Node {
 
     public static Node valueNode(Integer value) {
         return new Node(value);
+    }
+
+    public static Node opNode(String operator, Node leftOperand, Node rightOperand) {
+        return new Node(operator, leftOperand, rightOperand);
     }
 
     public Integer compute() {
