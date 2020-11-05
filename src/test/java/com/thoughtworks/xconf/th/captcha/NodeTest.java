@@ -21,10 +21,14 @@ public class NodeTest {
 
     @Test
     public void display_complexOperatorNodes() {
-        Node f = OpNode.opNode(new Operator("*"), OpNode.valueNode(2), OpNode.valueNode(5));
+        Node f = OpNode.opNode(multiply(), OpNode.valueNode(2), OpNode.valueNode(5));
         Node g = OpNode.opNode(plus(), f, OpNode.valueNode(3));
 
         assertEquals("2 * 5 + 3", g.display());
+    }
+
+    private static Operator multiply() {
+        return new Operator("*");
     }
 
     private static Operator plus() {
@@ -49,7 +53,7 @@ public class NodeTest {
 
     @Test
     public void compute_complexOperatorNodes() {
-        Node f = OpNode.opNode(new Operator("*"), OpNode.valueNode(2), OpNode.valueNode(5));
+        Node f = OpNode.opNode(multiply(), OpNode.valueNode(2), OpNode.valueNode(5));
         Node g = OpNode.opNode(plus(), f, OpNode.valueNode(3));
 
         assertEquals(13, g.compute().intValue());
